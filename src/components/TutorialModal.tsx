@@ -33,21 +33,22 @@ export default function TutorialModal({ sandwich, onClose }: TutorialModalProps)
 
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`fixed inset-0 z-[100] flex items-center justify-center p-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       onClick={handleClose}
     >
       {/* 背景遮罩 */}
       <div 
-        className={`absolute inset-0 bg-black/70 transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed inset-0 bg-[#5a7a4a]/80 z-[99] transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}
+        onClick={onClose}
       />
 
       {/* 內容區域 */}
       <div 
-        className={`relative bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`relative bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-[101] ${
           isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-4 opacity-0 scale-95'
         }`}
         onClick={e => e.stopPropagation()}
