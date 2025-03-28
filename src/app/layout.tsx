@@ -10,9 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "日出而作",
     description: "菜鳥餐點製作查詢",
+    url: "https://sunrise-sandwich-tutorial.vercel.app",
+    siteName: "日出而作",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://sunrise-sandwich-tutorial.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "日出而作早餐店",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "日出而作",
     description: "菜鳥餐點製作查詢",
-    images: ["/og-image.jpg"],
+    images: ["https://sunrise-sandwich-tutorial.vercel.app/og-image.jpg"],
   },
 };
 
