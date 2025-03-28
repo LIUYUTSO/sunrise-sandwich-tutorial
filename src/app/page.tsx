@@ -49,13 +49,13 @@ export default function Home() {
               套餐餐點注意事項
             </h3>
             <div className="space-y-2 md:space-y-3 text-gray-700">
-              <p className="flex items-start text-sm md:text-base whitespace-nowrap overflow-hidden text-ellipsis">
+              <p className="flex items-start text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
                 <span className="text-[#5a7a4a] font-medium mr-2 flex-shrink-0">•</span>
-                <span className="truncate">日出套餐：蛋餅可換口味，價格較高要補差額，厚片可以換其他單一口味</span>
+                <span className="flex-1">日出套餐：蛋餅可換口味，價格較高要補差額，厚片可以換其他單一口味</span>
               </p>
-              <p className="flex items-start text-sm md:text-base whitespace-nowrap overflow-hidden text-ellipsis">
+              <p className="flex items-start text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
                 <span className="text-[#5a7a4a] font-medium mr-2 flex-shrink-0">•</span>
-                <span className="truncate">套餐的沙拉、薯條、蛋，可互換，但不能換其他東西（例如：沙拉換薯條）</span>
+                <span className="flex-1">套餐的沙拉、薯條、蛋，可互換，但不能換其他東西（例如：沙拉換薯條）</span>
               </p>
             </div>
           </div>
