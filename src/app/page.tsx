@@ -53,7 +53,7 @@ export default function Home() {
                 <button 
                   key={sandwich.id} 
                   onClick={() => handleSandwichClick(sandwich)}
-                  className="group block p-4 bg-white text-black border border-black rounded-lg hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
+                  className="group block px-4 py-2 bg-white text-black border border-black rounded-full hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <h3 className="text-base font-medium text-center">{sandwich.name}</h3>
                 </button>
@@ -74,7 +74,7 @@ export default function Home() {
                 <button 
                   key={sandwich.id} 
                   onClick={() => handleSandwichClick(sandwich)}
-                  className="group block p-4 bg-white text-black border border-black rounded-lg hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
+                  className="group block px-4 py-2 bg-white text-black border border-black rounded-full hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <h3 className="text-base font-medium text-center">{sandwich.name}</h3>
                 </button>
@@ -95,7 +95,7 @@ export default function Home() {
                 <button 
                   key={sandwich.id} 
                   onClick={() => handleSandwichClick(sandwich)}
-                  className="group block p-4 bg-white text-black border border-black rounded-lg hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
+                  className="group block px-4 py-2 bg-white text-black border border-black rounded-full hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <h3 className="text-base font-medium text-center">{sandwich.name}</h3>
                 </button>
@@ -116,7 +116,7 @@ export default function Home() {
                 <button 
                   key={sandwich.id} 
                   onClick={() => handleSandwichClick(sandwich)}
-                  className="group block p-4 bg-white text-black border border-black rounded-lg hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
+                  className="group block px-4 py-2 bg-white text-black border border-black rounded-full hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <h3 className="text-base font-medium text-center">{sandwich.name}</h3>
                 </button>
@@ -137,7 +137,7 @@ export default function Home() {
                 <button 
                   key={sandwich.id} 
                   onClick={() => handleSandwichClick(sandwich)}
-                  className="group block p-4 bg-white text-black border border-black rounded-lg hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
+                  className="group block px-4 py-2 bg-white text-black border border-black rounded-full hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <h3 className="text-base font-medium text-center">{sandwich.name}</h3>
                 </button>
