@@ -3,57 +3,8 @@ import { Sandwich } from '@/types/sandwich';
 export const sandwiches: Sandwich[] = [
   // 漢堡系列
   {
-    id: 1,
-    name: '經典火腿蛋三明治',
-    type: 'burger',
-    layers: {
-      bottom: {
-        ingredients: ['生菜', '番茄片'],
-        sauce: '美乃滋'
-      },
-      middle: {
-        ingredients: ['火腿', '蛋'],
-        seasoning: '胡椒粒'
-      },
-      top: {
-        ingredients: [],
-        sauce: '千島醬'
-      }
-    },
-    notes: [
-      '確保所有食材都在室溫下準備',
-      '檢查食材的新鮮度'
-    ],
-    steps: [
-      {
-        id: 1,
-        title: '準備食材',
-        description: '準備吐司2片、火腿1片、雞蛋1顆、生菜1片、番茄半顆',
-        tips: ['確保所有食材都在室溫下準備', '檢查食材的新鮮度']
-      },
-      {
-        id: 2,
-        title: '煎蛋',
-        description: '將平底鍋預熱，加入少許油，打入雞蛋，煎至蛋白凝固，蛋黃半熟',
-        tips: ['使用中小火煎蛋', '可以根據顧客喜好調整蛋的熟度']
-      },
-      {
-        id: 3,
-        title: '烤吐司',
-        description: '將吐司放入烤麵包機中烤至金黃色',
-        tips: ['注意觀察顏色變化', '不要烤太久以免燒焦']
-      },
-      {
-        id: 4,
-        title: '組裝三明治',
-        description: '在底層吐司上放上生菜，然後依序放上火腿、煎蛋、番茄片，最後蓋上另一片吐司',
-        tips: ['注意擺放順序以確保口感', '可以稍微壓實三明治']
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: '蔬菜起司堡',
+    id: "vegetable-cheese-burger",
+    name: "蔬菜起司堡",
     type: 'burger',
     layers: {
       bottom: {
