@@ -93,28 +93,33 @@ export default function TutorialModal({ sandwich, onClose }: TutorialModalProps)
                   { label: '底層', data: sandwich.layers.bottom },
                   { label: '中層', data: sandwich.layers.middle },
                   { label: '上層', data: sandwich.layers.top }
-                ].map((layer, idx) => layer.data && (
-                  <div key={idx} className="group p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-[#5a7a4a]/30 transition-colors">
-                    <h4 className="text-xs font-black text-[#5a7a4a] mb-2 uppercase tracking-widest">{layer.label}</h4>
-                    <div className="text-gray-700 flex flex-wrap items-center gap-2">
-                      {layer.data.ingredients.map((ing, i) => (
-                        <span key={i} className="flex items-center">
-                          {ing}{i < layer.data.ingredients.length - 1 && <span className="mx-2 text-gray-300">→</span>}
-                        </span>
-                      ))}
-                      {layer.data.sauce && (
-                        <span className="px-2 py-0.5 bg-orange-50 text-orange-600 rounded text-sm font-medium">
-                          <span className="mr-1 opacity-50">/</span> {layer.data.sauce}
-                        </span>
-                      )}
-                      {layer.data.seasoning && (
-                        <span className="px-2 py-0.5 bg-blue-50 text-blue-600 rounded text-sm font-medium">
-                          <span className="mr-1 opacity-50">/</span> {layer.data.seasoning}
-                        </span>
-                      )}
+                ].map((layer, idx) => {
+                  const data = layer.data;
+                  if (!data) return null;
+
+                  return (
+                    <div key={idx} className="group p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-[#5a7a4a]/30 transition-colors">
+                      <h4 className="text-xs font-black text-[#5a7a4a] mb-2 uppercase tracking-widest">{layer.label}</h4>
+                      <div className="text-gray-700 flex flex-wrap items-center gap-2">
+                        {data.ingredients.map((ing, i) => (
+                          <span key={i} className="flex items-center">
+                            {ing}{i < data.ingredients.length - 1 && <span className="mx-2 text-gray-300">→</span>}
+                          </span>
+                        ))}
+                        {data.sauce && (
+                          <span className="px-2 py-0.5 bg-orange-50 text-orange-600 rounded text-sm font-medium">
+                            <span className="mr-1 opacity-50">/</span> {data.sauce}
+                          </span>
+                        )}
+                        {data.seasoning && (
+                          <span className="px-2 py-0.5 bg-blue-50 text-blue-600 rounded text-sm font-medium">
+                            <span className="mr-1 opacity-50">/</span> {data.seasoning}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
 
