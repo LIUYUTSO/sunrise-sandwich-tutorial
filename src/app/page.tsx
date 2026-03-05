@@ -32,28 +32,22 @@ export default function Home() {
       <div className="container mx-auto px-4 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           {/* 注意事項框 */}
-          <div className="mb-12 p-6 bg-[#f9fbf8] border border-[#5a7a4a]/20 rounded-xl shadow-sm">
-            <h3 className="text-lg font-bold text-[#5a7a4a] mb-4 flex items-center">
-              <span className="p-1.5 bg-[#5a7a4a] text-white rounded-lg mr-3 shadow-sm">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </span>
+          <div className="mb-12 p-4 md:p-6 bg-white border border-[#5a7a4a] rounded-lg">
+            <h3 className="text-base md:text-lg font-bold text-[#5a7a4a] mb-3 md:mb-4 flex items-center">
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
               套餐餐點注意事項
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
-              <div className="flex items-start p-3 bg-white rounded-lg border border-[#5a7a4a]/10">
-                <span className="text-[#5a7a4a] font-black mr-3 mt-0.5">•</span>
-                <p className="text-sm md:text-base leading-relaxed">
-                  日出套餐：蛋餅可換口味，價格較高要補差額，厚片可以換其他單一口味
-                </p>
-              </div>
-              <div className="flex items-start p-3 bg-white rounded-lg border border-[#5a7a4a]/10">
-                <span className="text-[#5a7a4a] font-black mr-3 mt-0.5">•</span>
-                <p className="text-sm md:text-base leading-relaxed">
-                  套餐的沙拉、薯條、蛋，可互換，但不能換其他東西（例如：沙拉換薯條）
-                </p>
-              </div>
+            <div className="space-y-2 md:space-y-3 text-gray-700">
+              <p className="flex items-start text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
+                <span className="text-[#5a7a4a] font-medium mr-2 flex-shrink-0">•</span>
+                <span className="flex-1">日出套餐：蛋餅可換口味，價格較高要補差額，厚片可以換其他單一口味</span>
+              </p>
+              <p className="flex items-start text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
+                <span className="text-[#5a7a4a] font-medium mr-2 flex-shrink-0">•</span>
+                <span className="flex-1">套餐的沙拉、薯條、蛋，可互換，但不能換其他東西（例如：沙拉換薯條）</span>
+              </p>
             </div>
           </div>
 
