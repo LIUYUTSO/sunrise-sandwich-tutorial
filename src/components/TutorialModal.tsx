@@ -1,5 +1,5 @@
 import { Sandwich } from '@/types/sandwich';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 
 interface TutorialModalProps {
   sandwich: Sandwich;
