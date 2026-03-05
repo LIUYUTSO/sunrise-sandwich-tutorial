@@ -7,7 +7,7 @@ export default function TutorialPage() {
   const router = useRouter();
   const params = useParams();
 
-  const sandwich = sandwiches.find(s => s.id === Number(params.id));
+  const sandwich = sandwiches.find(s => s.id === params.id);
 
   if (!sandwich) {
     return (
