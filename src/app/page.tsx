@@ -32,22 +32,24 @@ export default function Home() {
       <div className="container mx-auto px-4 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           {/* 注意事項框 */}
-          <div className="mb-12 p-4 md:p-6 bg-white border border-[#5a7a4a] rounded-lg">
-            <h3 className="text-base md:text-lg font-bold text-[#5a7a4a] mb-3 md:mb-4 flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
+          <div className="mb-20 p-8 md:p-10 bg-white border border-black/[0.03] rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#5a7a4a]/5 rounded-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-110" />
+            <h3 className="text-xs font-black text-[#5a7a4a] uppercase tracking-[0.3em] mb-8 flex items-center">
+              <span className="w-10 h-[1px] bg-[#5a7a4a]/20 mr-4"></span>
               套餐餐點注意事項
             </h3>
-            <div className="space-y-2 md:space-y-3 text-gray-700">
-              <p className="flex items-start text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
-                <span className="text-[#5a7a4a] font-medium mr-2 flex-shrink-0">•</span>
-                <span className="flex-1">日出套餐：蛋餅可換口味，價格較高要補差額，厚片可以換其他單一口味</span>
-              </p>
-              <p className="flex items-start text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
-                <span className="text-[#5a7a4a] font-medium mr-2 flex-shrink-0">•</span>
-                <span className="flex-1">套餐的沙拉、薯條、蛋，可互換，但不能換其他東西（例如：沙拉換薯條）</span>
-              </p>
+            <div className="space-y-6">
+              {[
+                "日出套餐：蛋餅可換口味，價格較高要補差額，厚片可以換其他單一口味",
+                "套餐的沙拉、薯條、蛋，可互換，但不能換其他東西（例如：沙拉換薯條）"
+              ].map((note, i) => (
+                <div key={i} className="flex items-start">
+                  <span className="text-lg font-black text-black/10 mr-6 mt-[-4px]">{(i + 1).toString().padStart(2, '0')}</span>
+                  <p className="text-black/70 text-base md:text-lg leading-relaxed font-medium tracking-tight">
+                    {note}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 

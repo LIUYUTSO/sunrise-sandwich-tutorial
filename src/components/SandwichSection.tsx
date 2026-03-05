@@ -18,15 +18,13 @@ export default function SandwichSection({ title, items, onItemClick }: SandwichS
                 </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {items.map((sandwich) => (
-                    <button
-                        key={sandwich.id}
-                        onClick={() => onItemClick(sandwich)}
-                        className="group block px-4 py-2 bg-white text-black border border-black rounded-full hover:bg-[#5a7a4a] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md"
-                    >
-                        <h3 className="text-sm md:text-base font-medium text-center whitespace-nowrap">{sandwich.name}</h3>
-                    </button>
-                ))}
+                <button
+                    key={sandwich.id}
+                    onClick={() => onItemClick(sandwich)}
+                    className="group relative block px-4 py-2 bg-white text-black border border-black/10 rounded-full hover:bg-black hover:text-white transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden"
+                >
+                    <h3 className="relative z-10 text-sm md:text-base font-medium text-center whitespace-nowrap tracking-tight transition-transform duration-500 group-hover:scale-105">{sandwich.name}</h3>
+                </button>
             </div>
         </section>
     );
