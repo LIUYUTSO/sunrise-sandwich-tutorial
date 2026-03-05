@@ -41,7 +41,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 3,
+    id: "tuna-panini",
     name: '鮪魚帕尼尼',
     type: 'panini',
     layers: {
@@ -89,7 +89,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 4,
+    id: "cheese-egg-burger",
     name: '起司蛋團聚堡',
     type: 'burger',
     layers: {
@@ -127,7 +127,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 5,
+    id: "smoked-chicken-burger",
     name: '燻雞堡',
     type: 'burger',
     layers: {
@@ -165,7 +165,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 6,
+    id: "retro-burger",
     name: '懷舊堡',
     type: 'burger',
     layers: {
@@ -203,7 +203,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 7,
+    id: "kimchi-pork-burger",
     name: '泡菜辣豬堡',
     type: 'burger',
     layers: {
@@ -240,7 +240,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 8,
+    id: "crispy-chicken-burger",
     name: '脆皮嫩滋雞腿堡',
     type: 'burger',
     layers: {
@@ -279,7 +279,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 9,
+    id: "scallion-pork-burger",
     name: '蔥爆起司豬柳堡',
     type: 'burger',
     layers: {
@@ -316,7 +316,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 10,
+    id: "black-pork-burger",
     name: '黑豬肉堡',
     type: 'burger',
     layers: {
@@ -352,7 +352,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 11,
+    id: "beef-burger",
     name: '厚牛堡',
     type: 'burger',
     layers: {
@@ -390,7 +390,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 12,
+    id: "fried-chicken-burger",
     name: '嫩煎雞腿堡',
     type: 'burger',
     layers: {
@@ -428,7 +428,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 13,
+    id: "surf-turf-burger",
     name: '海陸總匯堡',
     type: 'burger',
     layers: {
@@ -468,7 +468,7 @@ export const sandwiches: Sandwich[] = [
 
   // 帕尼尼系列
   {
-    id: 14,
+    id: "ham-hashbrown-panini",
     name: '起司火腿薯餅帕尼尼',
     type: 'panini',
     layers: {
@@ -512,7 +512,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 15,
+    id: "pork-floss-panini",
     name: '肉鬆帕尼尼',
     type: 'panini',
     layers: {
@@ -557,7 +557,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 16,
+    id: "peanut-pork-floss-panini",
     name: '花醬肉鬆帕尼尼',
     type: 'panini',
     layers: {
@@ -600,7 +600,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 17,
+    id: "taro-pork-floss-panini",
     name: '芋泥肉鬆起司蛋帕尼尼',
     type: 'panini',
     layers: {
@@ -643,7 +643,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 18,
+    id: "scallion-salt-pork-panini",
     name: '蔥鹽蔬菜豬肉蛋帕尼尼',
     type: 'panini',
     layers: {
@@ -686,7 +686,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 19,
+    id: "macho-combo-panini",
     name: '猛男套餐中總匯帕尼尼',
     type: 'panini',
     layers: {
@@ -724,7 +724,7 @@ export const sandwiches: Sandwich[] = [
 
   // 厚片焗烤系列
   {
-    id: 21,
+    id: "tuna-grilled",
     name: '鮪魚焗烤',
     type: 'grilled',
     layers: {
@@ -758,7 +758,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 22,
+    id: "sausage-grilled",
     name: '德腸焗烤',
     type: 'grilled',
     layers: {
@@ -793,7 +793,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 23,
+    id: "smoked-chicken-grilled",
     name: '燻雞焗烤',
     type: 'grilled',
     layers: {
@@ -829,7 +829,7 @@ export const sandwiches: Sandwich[] = [
 
   // 飯卷系列
   {
-    id: 24,
+    id: "tuna-rice-roll",
     name: '鮪魚飯卷',
     type: 'riceRoll',
     layers: {
@@ -863,7 +863,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 25,
+    id: "pork-floss-rice-roll",
     name: '肉鬆飯卷',
     type: 'riceRoll',
     layers: {
@@ -897,7 +897,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 26,
+    id: "pork-rice-roll",
     name: '豬柳飯卷',
     type: 'riceRoll',
     layers: {
@@ -932,7 +932,7 @@ export const sandwiches: Sandwich[] = [
 
   // 捲餅系列
   {
-    id: 27,
+    id: "pork-wrap",
     name: '豬柳捲餅',
     type: 'wrap',
     layers: {
@@ -964,7 +964,7 @@ export const sandwiches: Sandwich[] = [
     ]
   },
   {
-    id: 28,
+    id: "fried-chicken-wrap",
     name: '炸雞捲餅',
     type: 'wrap',
     layers: {

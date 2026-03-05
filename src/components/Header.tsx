@@ -2,10 +2,16 @@
 
 export default function Header() {
   return (
-    <header className="bg-black text-white py-8">
+    <header className="fixed top-0 left-0 right-0 bg-black text-white py-4 z-50">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-2">日出而作</h1>
-        <p className="text-xl text-center text-gray-300">Sunrise</p>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-black tracking-tight">
+            日出而作
+          </h1>
+          <p className="text-lg text-gray-300 tracking-widest font-light">
+            SUNRISE BRUNCH
+          </p>
+        </div>
       </div>
     </header>
   );

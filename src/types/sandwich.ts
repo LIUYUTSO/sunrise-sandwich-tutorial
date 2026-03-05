@@ -14,7 +14,7 @@ export interface Step {
 }
 
 export interface Sandwich {
-  id: string | number;
+  id: string;
   name: string;
   type: SandwichType;
   layers: {
