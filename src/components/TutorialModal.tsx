@@ -181,8 +181,4 @@ export default function TutorialModal({ sandwich, onClose }: TutorialModalProps)
       </div>
     </div>
   );
-}
-      </div >
-    </div >
-  );
 } 
