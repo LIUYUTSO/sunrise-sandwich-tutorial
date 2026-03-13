@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const noto = Noto_Sans_TC({ subsets: ["latin"], weight: ["400", "500", "700", "900"], variable: '--font-noto' });
 
 export const metadata: Metadata = {
   title: "日出而作",
@@ -36,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-TW">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${noto.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
