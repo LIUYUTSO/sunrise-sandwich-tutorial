@@ -9,6 +9,7 @@ interface TutorialModalProps {
 export default function TutorialModal({ sandwich, onClose }: TutorialModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [currentStepIndex, setCurrentStepIndex] = useState(-1); // -1 means showing ingredients and notes
 
   useEffect(() => {
     // 添加一個小延遲以確保動畫效果正常顯示
@@ -143,39 +144,114 @@ export default function TutorialModal({ sandwich, onClose }: TutorialModalProps)
               </div>
             )}
 
-            {/* 製作步驟 */}
-            <div className="stagger-item" style={{ animationDelay: '0.4s' }}>
-              <h3 className="text-xs font-black text-black/40 uppercase tracking-[0.3em] mb-6 flex items-center">
-                <span className="w-8 h-[1px] bg-black/10 mr-4"></span>
-                製作步驟
-              </h3>
-              <div className="space-y-6">
-                {sandwich.steps.map((step, index) => (
-                  <div key={step.id} className="group border border-black/5 rounded-2xl p-6 hover:bg-black/2 transition-colors duration-500">
+            {/* 動態內容區域：食材與注意事項 或 單一製作步驟 */}
+            <div className="stagger-item min-h-[300px]" style={{ animationDelay: '0.4s' }}>
+              {currentStepIndex === -1 ? (
+                <div className="animate-fade-in-up">
+                  <div className="flex items-center justify-center h-full flex-col py-10">
+                    <div className="w-16 h-16 bg-[#5a7a4a]/10 rounded-full flex items-center justify-center mb-6">
+                      <svg className="w-8 h-8 text-[#5a7a4a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">準備開始製作</h3>
+                    <p className="text-gray-500 text-center max-w-sm mb-8">請先確認所有食材準備就緒，並詳細閱讀注意事項。</p>
+                  </div>
+                </div>
+              ) : (
+                <div key={currentStepIndex} className="animate-fade-in-up">
+                  <div className="flex justify-between items-center mb-6">
+                    <h3 className="text-xs font-black text-black/40 uppercase tracking-[0.3em] flex items-center">
+                      <span className="w-8 h-[1px] bg-black/10 mr-4"></span>
+                      步驟 {currentStepIndex + 1} / {sandwich.steps.length}
+                    </h3>
+
+                    {/* 進度條 */}
+                    <div className="w-1/3 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-[#5a7a4a] transition-all duration-500 ease-out"
+                        style={{ width: `${((currentStepIndex + 1) / sandwich.steps.length) * 100}%` }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white border-2 border-[#5a7a4a]/10 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.03)] transition-all duration-500">
                     <div className="flex items-start">
-                      <span className="text-3xl font-black text-black/5 mr-6 group-hover:text-black/10 transition-colors">
-                        {(index + 1).toString().padStart(2, '0')}
+                      <span className="text-5xl font-black text-[#5a7a4a]/10 mr-8 font-serif italic">
+                        {(currentStepIndex + 1).toString().padStart(2, '0')}
                       </span>
-                      <div>
-                        <h4 className="text-lg font-bold text-black mb-2 tracking-tight">
-                          {step.title}
+                      <div className="flex-1">
+                        <h4 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">
+                          {sandwich.steps[currentStepIndex].title}
                         </h4>
-                        <p className="text-black/60 text-base leading-relaxed">{step.description}</p>
-                        {step.tips && step.tips.length > 0 && (
-                          <div className="mt-4 flex flex-wrap gap-2">
-                            {step.tips.map((tip, tipIndex) => (
-                              <span key={tipIndex} className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 bg-black/5 text-black/50 rounded-md">
-                                {tip}
-                              </span>
-                            ))}
+                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                          {sandwich.steps[currentStepIndex].description}
+                        </p>
+
+                        {sandwich.steps[currentStepIndex].tips && sandwich.steps[currentStepIndex].tips.length > 0 && (
+                          <div className="bg-[#5a7a4a]/5 rounded-xl p-4 border border-[#5a7a4a]/10">
+                            <h5 className="text-xs font-bold text-[#5a7a4a] uppercase tracking-wider mb-3 flex items-center">
+                              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              小提示
+                            </h5>
+                            <div className="flex flex-wrap gap-2">
+                              {sandwich.steps[currentStepIndex].tips.map((tip, tipIndex) => (
+                                <span key={tipIndex} className="text-xs font-medium px-3 py-1.5 bg-white text-gray-700 border border-gray-200 rounded-lg shadow-sm">
+                                  {tip}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         )}
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
+
+            {/* 控制按鈕 */}
+            <div className="stagger-item flex items-center justify-between pt-6 border-t border-gray-100" style={{ animationDelay: '0.5s' }}>
+              <button
+                onClick={() => setCurrentStepIndex(prev => Math.max(-1, prev - 1))}
+                disabled={currentStepIndex === -1}
+                className={`px-6 py-3 rounded-xl font-bold text-sm flex items-center transition-all duration-300 ${
+                  currentStepIndex === -1
+                    ? 'opacity-0 invisible'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                上一步
+              </button>
+
+              <button
+                onClick={() => {
+                  if (currentStepIndex < sandwich.steps.length - 1) {
+                    setCurrentStepIndex(prev => prev + 1);
+                  } else {
+                    handleClose();
+                  }
+                }}
+                className={`px-8 py-3 rounded-xl font-bold text-sm flex items-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ${
+                  currentStepIndex === sandwich.steps.length - 1
+                    ? 'bg-black text-white hover:bg-gray-800'
+                    : 'bg-[#5a7a4a] text-white hover:bg-[#4a653d]'
+                }`}
+              >
+                {currentStepIndex === -1 ? '開始製作' : currentStepIndex === sandwich.steps.length - 1 ? '完成' : '下一步'}
+                {currentStepIndex !== sandwich.steps.length - 1 && (
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
+              </button>
+            </div>
+
           </div>
         </div>
       </div>
