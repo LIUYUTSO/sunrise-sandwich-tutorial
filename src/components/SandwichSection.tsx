@@ -22,9 +22,10 @@ export default function SandwichSection({ title, items, onItemClick }: SandwichS
                     <button
                         key={sandwich.id}
                         onClick={() => onItemClick(sandwich)}
-                        className="group relative block px-4 py-2 bg-white text-black border border-black/10 rounded-full hover:bg-black hover:text-white transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden"
+                        className="group relative block px-4 py-4 bg-white text-black border border-black/5 rounded-2xl hover:bg-[#5a7a4a] hover:text-white hover:border-transparent transition-all duration-300 ease-out transform hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl active:scale-95 active:shadow-md overflow-hidden"
                     >
-                        <h3 className="relative z-10 text-sm md:text-base font-medium text-center whitespace-nowrap tracking-tight transition-transform duration-500 group-hover:scale-105">{sandwich.name}</h3>
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <h3 className="relative z-10 text-sm md:text-base font-bold text-center tracking-tight transition-transform duration-300 group-hover:scale-105">{sandwich.name}</h3>
                     </button>
                 ))}
             </div>
